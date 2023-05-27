@@ -75,13 +75,15 @@ const App = () => {
         <div className="search__box">
           <input type="text" value={searchInput} onChange={(e) => {setSearchInput(e.target.value)}} placeholder='Search Images...' onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              fetchSearchImages(e.target.value);
               setPageNo(1);
+              setBtnsDisablity({ back: true, next: false });
+              fetchSearchImages(e.target.value);
             }
           }} />
           <button type='button' onClick={() => {
-            fetchSearchImages(searchInput);
             setPageNo(1);
+            setBtnsDisablity({ back: true, next: false });
+            fetchSearchImages(searchInput);
           }}><ion-icon name='search'></ion-icon></button>
         </div>
 
