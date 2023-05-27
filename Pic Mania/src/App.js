@@ -5,7 +5,7 @@ const retrieveRecentSearchFromLocalStorage = () => {
   let recentSearch = JSON.parse(localStorage.getItem('recent'));
   console.log(recentSearch);
   if (recentSearch) return recentSearch;
-  else return '';
+  else return 'Trees';
 }
 
 const App = () => {
