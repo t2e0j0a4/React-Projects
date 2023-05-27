@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+:root {
+  --font : 'Source Sans Pro', sans-serif;
+  --black : #232323;
+  --white : #ffffff;
+}
+
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+}
+
+.main__page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: var(--black);
+  padding: 1rem;
+}
+
+.page__center {
+  width: 1200px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.page__head {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 40px;
+  color: var(--white);
+  line-height: 64px;
+}
+
+.search__box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid var(--white);
+}
+
+.search__box input {
+  width: 100%;
+  padding: 16px 0;
+  outline: none;
+  border-radius: 1px;
+  border: none;
+  background-color: var(--black);
+  font-family: var(--font);
+  font-size: 24px;
+  color: var(--white);
+}
+
+.search__box button {
+  padding: 16px 8px;
+  background-color: var(--black);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search__box button ion-icon {
+  font-size: 32px;
+  color: var(--white);
+}
+
+.images__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.list__head {
+  width: 100%;
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 32px;
+}
+
+.page__no {
+  width: 100%;
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 20px;
+}
+
+.all__images {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem 1rem;
+}
+
+.all__images .empty__list {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 20px;
+  color: var(--white);
+}
+
+.all__images .image {
+  width: 288px;
+  max-width: 100%;
+  flex: 0 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+@media all and (max-width : 1232px) {
+  .all__images .image {
+    width: 280px;
+  }
+}
+
+@media all and (max-width : 1200px) {
+  .all__images .image {
+    width: 320px;
+  }
+}
+
+@media all and (max-width : 1024px) {
+  .all__images .image {
+    width: 300px;
+  }
+}
+
+@media all and (max-width : 964px) {
+  .all__images .image {
+    width: 276px;
+  }
+}
+
+@media all and (max-width : 892px) {
+  .all__images .image {
+    width: 45%;
+  }
+}
+
+@media all and (max-width : 600px) {
+  
+  * {
+    cursor: default;
+  }
+
+  .all__images .image {
+    width: 48%;
+  }
+}
+
+@media all and (max-width : 500px) {
+
+  .page__head {
+    font-size: 36px
+  }
+
+  .all__images .image {
+    width: 90%;
+  }
+}
+
+@media all and (max-width : 400px) {
+
+  .page__head {
+    font-size: 32px;
+    line-height: 52px;
+    text-align: center;
+  }
+
+  .all__images .image {
+    width: 100%;
+  }
+}
+
+@media all and (max-width : 350px) {
+
+  .page__head {
+    font-size: 36px;
+    text-align: left;
+    line-height: normal;
+  }
+
+  .page__head span {
+    display: none;
+  }
+}
+
+.image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.image p {
+  width: 100%;
+  font-family: var(--font);
+  text-align: center;
+  font-size: 16px;
+  color: var(--white);
+}
+
+.toggle__buttons {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle__buttons button {
+  padding: 10px 12px;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 20px;
+  background-color: var(--black);
+  outline: none;
+  border: 1px solid var(--white);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.toggle__buttons button ion-icon {
+  font-size: 18px;
+}
+
+.toggle__buttons button:disabled {
+  color: #dddddd4b;
+  border: 1px solid #dddddd4b;
+  cursor: default;
+}
