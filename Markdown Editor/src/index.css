@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.editor__page {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.main__editor {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  resize: none;
+  border: none;
+  font-size: 20px;
+  padding: 1rem;
+  line-height: 28px;
+  color: #ffffff;
+  background-color: #232323;
+  outline: none;
+}
+
+.markdown__side {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 1rem;
+  color: #232323;
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media all and (max-width : 1024px) {
+  .editor__page {
+    flex-direction: column;
+  }
+}
