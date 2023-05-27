@@ -1,8 +1,8 @@
 # React-Projects
 
-Hello All! Welcome, These React Projects will help you become a better developer and help you learn you more.
+Hello All! Welcome, These are some React Projects for practising skills.
 
-### Checkout Sites Here!
+### Checkout Here!
 
 | S.No | Project | Link | Code |
 | - | -------- | ------- | --- |
