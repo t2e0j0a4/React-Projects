@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+:root {
+  --font : 'Tilt Neon', cursive;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grocery__page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: #232323;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+}
+
+.grocery__page > h1 {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 36px;
+  color: #fff;
+}
+
+.grocery__box {
+  width: 700px;
+  max-width: 100%;
+  height: 100%;
+  padding: 3rem 1rem 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 12px 12px #fff;
+  outline: 1px solid #232323;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.grocery__input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.grocery__input input {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: var(--font);
+  font-size: 20px;
+  outline: none;
+  border: 1px solid #232323;
+  border-radius: 4px;
+}
+
+.grocery__input button {
+  padding: 8px 10px;
+  font-family: var(--font);
+  font-size: 20px;
+  outline: none;
+  border: 1px solid #232323;
+  border-radius: 4px;
+  background-color: #232323;
+  color: #fff;
+  cursor: pointer;
+}
+
+.grocery__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.grocery__item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.item__details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.item__details input {
+  width: 20px;
+  height: 20px;
+}
+
+.item__details .item__checked {
+  text-decoration: line-through;
+}
+
+.item__details p {
+  font-family: var(--font);
+  font-size: 20px;
+  color: #232323;
+}
+
+.grocery__item > button {
+  padding: 4px 8px;
+  font-family: var(--font);
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #ff2121;
+  border-radius: 4px;
+  background-color: #ff2121;
+  color: #fff;
+  cursor: pointer;
+}
+
+.empty__list {
+  font-family: var(--font);
+  font-size: 24px;
+  color: #232323;
+}
