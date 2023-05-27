@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+:root {
+  --font : 'Tilt Neon', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: #232323;
+}
+
+.carousal {
+  width: 1100px;
+  max-width: 96%;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.carousal__track {
+  background: #121212;
+  border-radius: 16px;
+  box-shadow: 32px 32px #000000;
+  outline: 0.02rem solid #232323;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+
+.card {
+  width: 100%;
+  flex: 0 0 auto;
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.4s linear;
+}
+
+.card__image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.card__details {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.card__details h2 {
+  font-family: var(--font);
+  font-size: 28px;
+  color: #fff;
+}
+
+.card__details p {
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.card > p {
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 400;
+  color: whitesmoke;
+  text-align: center;
+  width: 80%;
+}
+
+.carousal__btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn__toggle {
+  --color: #000000;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4em;
+  height: 2.4em;
+  overflow: hidden;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  border: 2px solid #121212;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+ion-icon {
+  font-size: 24px;
+  color: #232323;
+}
+
+.btn__toggle::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.btn__toggle:hover ion-icon {
+  color: #fff;
+}
+
+.btn__toggle:before {
+  top: 100%;
+  left: 100%;
+  transition: .3s all;
+}
+
+.btn__toggle:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+@media all and (max-width : 600px) {
+
+  .carousal__track {
+    width: 100%;
+  }
+
+  .card__image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .card__details h2 {
+    font-size: 24px;
+  }
+
+  .card__details p {
+    font-size: 18px;
+  }
+
+  .card > p {
+    font-size: 16px;
+  }
+}
