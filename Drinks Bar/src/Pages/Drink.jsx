@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-import { useParams, useNavigate } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 
 const Drink = () => {
-  let navigate = useNavigate();
   let {id} = useParams();
+  let navigate = useNavigate();
   let API = "https://www.thecocktaildb.com/api/json/v1/1";
 
   // Fetch Particular Drink
@@ -14,7 +14,11 @@ const Drink = () => {
   const fetchDrinkDetails = async () => {
     const response = await fetch(`${API}/lookup.php?i=${id}`);
     const drink = await response.json();
-    setDrink(drink.drinks[0]);
+    let {drinks} = drink;
+    if (!drinks) {
+      return navigate('/pagenotfound');
+    }
+    setDrink(drinks[0]);
   }
 
   useEffect(() => {
@@ -26,9 +30,9 @@ const Drink = () => {
     <div className="each__drink" id={`each__drink-${idDrink}`}>
 
       <div className="explore__more">
-        <button type='button' onClick={() => {
-          navigate('/');
-        }}>Explore</button>
+        <p><Link to='/'>Home</Link></p>
+        <ion-icon name="chevron-forward"></ion-icon>
+        <p>Drink</p>
       </div>
 
       <div className="main__center">
@@ -40,15 +44,39 @@ const Drink = () => {
 
         {/* Drink Details */}
         <div className="each__drink-details">
-          <p><span>Drink</span> : {strDrink}</p>
-          <p><span>Glass</span> : {strGlass}</p>
-          <p><span>Category</span> : {strCategory}</p>
-          <p><span>Alcoholic</span> : {strAlcoholic}</p>
-          <p><span>Measure</span> : {strMeasure1}</p>
-          <p><span>Instructions</span> : {strInstructions}</p>
+          <div className="more__details">
+            <h2>Drink :</h2>
+            <p>{strDrink !== null ? strDrink : '-'}</p>
+          </div>
+
+          <div className="more__details">
+            <h2>Glass :</h2>
+            <p>{strGlass !== null ? strGlass : '-'}</p>
+          </div>
+
+          <div className="more__details">
+            <h2>Category :</h2>
+            <p>{strCategory !== null ? strCategory : '-'}</p>
+          </div>
+
+          <div className="more__details">
+            <h2>Alcoholic :</h2>
+            <p>{strAlcoholic !== null ? strAlcoholic : '-'}</p>
+          </div>
+
+          <div className="more__details">
+            <h2>Measure :</h2>
+            <p>{strMeasure1 !== null ? strMeasure1 : '-'}</p>
+          </div>
+
+          <div className="more__details">
+            <h2>Instructions :</h2>
+            <p>{strInstructions !== null ? strInstructions : '-'}</p>
+          </div>
         </div>
 
       </div>
+
     </div>
   )
 }

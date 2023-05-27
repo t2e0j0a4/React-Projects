@@ -18,6 +18,18 @@ const App = () => {
     setMyDrinks(drinks);
   }
 
+  const fetchSearchedDrinks = async (search) => {
+    if (search) {
+      let response = await fetch(`${API}/search.php?s=${search}`, {method : 'GET'});
+      let searchResults = await response.json();
+      let {drinks} = searchResults;
+      setMyDrinks(drinks);
+    }
+    else {
+      fetchAllDrinks();
+    }
+  }
+
   useEffect(() => {
     fetchAllDrinks();
   }, [])
@@ -25,7 +37,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact element={<Home myDrinks={myDrinks} />} />
+        <Route path="/" exact element={<Home myDrinks={myDrinks} fetchSearchedDrinks={fetchSearchedDrinks} />} />
         <Route path="/drink/:id" exact element={<Drink />} />
         <Route path="*" exact element={<PageNotFound />} />
       </Routes>

@@ -20,7 +20,7 @@
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  background-color: var(--primary);
+  background-color: var(--black);
 }
 
 .main__center {
@@ -35,16 +35,16 @@
   gap: 1rem;
 }
 
-.home__page h1 {
+.home__head {
   width: 100%;
-  text-align: center;
+  text-align: left;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1rem 0;
-  color: var(--black);
+  padding: 1rem;
+  color: var(--primary);
   font-family: var(--font);
-  font-size: 32px;
+  font-size: 36px;
 }
 
 .home__search {
@@ -58,34 +58,28 @@
 }
 
 .home__search input {
-  width: 80%;
+  width: 100%;
   font-family: var(--font);
-  padding: 6px 12px;
+  padding: 18px 24px;
   font-size: 16px;
   outline: none;
-  border: 2px solid var(--black);
-  border-radius: 4px;
+  border: none;
+  border-radius: 1px;
+  background-color: var(--secondary);
   color: var(--black);
 }
 
 .home__search button {
-  padding: 6px 12px;
+  padding: 18px 24px;
   font-family: var(--font);
-  border-radius: 8px;
-  background-color: var(--white);
+  border-radius: 2px;
+  background-color: var(--secondary);
   color: var(--black);
-  border: 2px solid var(--white);
-  outline: 1px solid var(--primary);
-  box-shadow: -6px 0px var(--white);
+  border: 2px solid var(--black);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s linear, box-shadow 0.2s linear;
-}
-
-.home__search button:hover {
-  box-shadow: none;
-  transform: translate(-6px, 0);
 }
 
 .drinks__list {
@@ -104,7 +98,7 @@
   font-family: var(--font);
   font-size: 28px;
   font-weight: 600;
-  color: var(--black);
+  color: var(--primary);
 }
 
 .all__drinks {
@@ -113,20 +107,29 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
   gap: 2rem;
 }
 
-.drink {
-  width: 320px;
-  height: 100%;
+.all__drinks .empty__list {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 20px;
+  color: var(--primary);
+}
 
+.drink {
+  width: 280px;
+  max-width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   background-color: var(--white);
+  box-shadow: 4px 8px 4px var(--secondary);
+  outline: 1px solid var(--white);
   gap: 0.4rem;
   border-radius: 6px;
 }
@@ -134,7 +137,7 @@
 .drink .drink__image {
   width: 100%;
   border-radius: 6px 6px 0 0;
-  height: 240px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -196,6 +199,110 @@
   border-radius: 2px;
 }
 
+.filter__head {
+  width: 100%;
+  padding: 1rem 0.5rem 0.2rem 1rem;
+  font-family: var(--font);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.filter__section {
+  width: 100%;
+  padding: 1rem 0.5rem 0.2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter__section button {
+  font-family: var(--font);
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary);
+  padding: 2px 6px;
+}
+
+.filter__section button.active {
+  color: var(--black);
+  outline: 1px solid var(--secondary);
+  background-color: var(--secondary);
+  border: 1px solid var(--black);
+  padding: 2px 6px;
+}
+
+.filter__list {
+  margin: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem 2rem;
+  flex-wrap: wrap;
+}
+
+.filter__list .empty__list {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.filter__drink {
+  width: 280px;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.8rem;
+  border-radius: 6px;
+  background-color: var(--white);
+  box-shadow: 4px 8px 4px var(--secondary);
+  outline: 1px solid var(--white);
+}
+
+.filter__drink img {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  height: 200px;
+  object-fit: cover;
+}
+
+.filter__drink-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0.8rem 0.6rem;
+}
+
+.filter__drink-details p {
+  font-family: var(--font);
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.filter__drink-details a {
+  padding: 6px 12px;
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font);
+  font-size: 14px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
 /* Home Page */
 
 /* Drink Page */
@@ -204,40 +311,53 @@
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  background-color: var(--white);
+  background-color: var(--black);
 }
 
 .explore__more {
   width: 1400px;
   max-width: 100%;
-  padding: 1rem 1rem 0 1rem;
+  height: 120px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  padding: 2rem 1rem;
 }
 
-.explore__more button {
-  padding: 8px 12px;
+.explore__more p:nth-child(1) {
   font-family: var(--font);
-  border-radius: 8px;
-  background-color: var(--secondary);
-  color: var(--black);
-  border: 2px solid var(--primary);
-  outline: 1px solid var(--white);
-  box-shadow: -4px -4px var(--primary);
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s linear, box-shadow 0.2s linear;
+  font-size: 24px;
 }
 
-.explore__more button:hover {
-  box-shadow: none;
-  transform: translate(-4px, -4px);
+.explore__more p a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.4s linear;
 }
 
+.explore__more p a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.explore__more ion-icon {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.explore__more p:nth-child(3) {
+  font-family: var(--font);
+  font-size: 20px;
+  color: var(--white);
+}
 
 .each__drink .main__center {
   width: 1400px;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -259,13 +379,15 @@
   border: 1px solid var(--secondary);
   outline: 1px solid var(--secondary);
   box-shadow: 12px 12px var(--primary);
-  width: 300px;
+  width: 100%;
   height: 400px;
+  aspect-ratio: 1/1;
   object-fit: cover;
 }
 
 .each__drink-details {
   flex: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -273,17 +395,25 @@
   gap: 2rem;
 }
 
-.each__drink-details p {
+.more__details {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.more__details h2 {
+  width: 160px;
+  font-family: var(--font);
+  font-size: 20px;
+  color: var(--secondary);
+}
+
+.more__details p {
   width: 100%;
   font-family: var(--font);
   font-size: 18px;
-  color: var(--black);
-}
-
-.each__drink-details p span {
-  background-color: var(--primary);
-  padding: 4px;
-  border-radius: 4px;
   color: var(--white);
 }
 
@@ -301,7 +431,8 @@
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
-  background-color: var(--white);
+  padding: 1rem 0;
+  background-color: var(--black);
 }
 
 .page__side1 {
@@ -319,7 +450,7 @@
   font-family: var(--font);
   font-size: 7rem;
   text-align: center;
-  color: var(--black);
+  color: var(--white);
   line-height: normal;
 }
 
@@ -329,7 +460,7 @@
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  color: var(--black);
+  color: var(--white);
 }
 
 .back__home {
@@ -337,7 +468,7 @@
   font-family: var(--font);
   border-radius: 8px;
   background-color: var(--secondary);
-  color: var(--black);
+  color: var(--white);
   border: 2px solid var(--primary);
   outline: 1px solid var(--white);
   box-shadow: -4px -4px var(--primary);
