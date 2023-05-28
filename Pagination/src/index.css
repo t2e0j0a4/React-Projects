@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root {
+  --font : 'Nunito', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+html, body {
+  background-color: #232323;
+}
+
+.app__page {
+  width: 1200px;
+  max-width: 98%;
+  margin: 1rem auto;
+  min-height: 100vh;
+}
+
+h1 {
+  width: 100%;
+  text-align: left;
+  font-size: 36px;
+  color: #fff;
+}
+
+h1 span {
+  font-size: 24px;
+}
+
+.products__container {
+  width: 100%;
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, 260px);
+  justify-content: center;
+  gap: 3rem;
+}
+
+.each__product {
+  max-width: 100%;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.each__product p {
+  color: #232323;
+}
+
+.products__pagination {
+  width: 100%;
+  margin: 3rem auto 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  color: #fff;
+}
+
+.products__pagination button {
+  background-color: transparent;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media all and (max-width : 450px) {
+
+  .products__pagination {
+    gap: 0.4rem;
+  }
+
+  .products__pagination button {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media all and (max-width : 385px) {
+  .products__pagination button {
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.products__pagination button.currentPage {
+  background-color: rgb(124, 124, 124);
+  color: #fff;
+}
+
+.products__pagination button:disabled {
+  border: 1px solid #7f7f7f;
+  color: #7f7f7f;
+  cursor: default;
+}
+
+.loader__space {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 3rem 0;
+}
+
+.loader {
+  color: #fff;
+  font-size: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 
+    2em -2em 0 0em, 3em 0 0 -1em, 
+    2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+    3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 
+    2em -2em 0 0, 3em 0 0 0.2em, 
+    2em 2em 0 0, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+     -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+     -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+     -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+    3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+    3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+  
