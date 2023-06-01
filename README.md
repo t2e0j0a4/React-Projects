@@ -13,3 +13,4 @@ Hello All! Welcome, These are some React Projects for practising skills.
 | 5 | Drinks Bar | [Visit Here!](https://drinksbar-project.netlify.app/) | [Code](https://github.com/t2e0j0a4/React-Projects/tree/main/Drinks%20Bar) |
 | 6 | Pic Mania | [Visit Here!](https://picmania-project.netlify.app/) | [Code](https://github.com/t2e0j0a4/React-Projects/tree/main/Pic%20Mania) |
 | 7 | Pagination | [Visit Here!](https://product-pagination.netlify.app/) | [Code](https://github.com/t2e0j0a4/React-Projects/tree/main/Pagination) |
+| 8 | My Cart | [Visit Here!](https://mycart-products.netlify.app/) | [Code](https://github.com/t2e0j0a4/React-Projects/tree/main/My%20Cart) |
